@@ -200,6 +200,11 @@
 .footer__button svg {
   width: 1.75rem;
   height: 1.75rem;
+  position: relative;
+  z-index: 3;
+  background-color: var(--button-background-color);
+  filter: invert(1);
+  mix-blend-mode: difference;
 }
 
 .dialog__text {
@@ -315,14 +320,6 @@
   content: "";
   transition: transform 0.5s ease-in-out;
   transform: translateX(0);
-}
-
-.footer__button svg {
-  position: relative;
-  z-index: 3;
-  background-color: var(--button-background-color);
-  filter: invert(1);
-  mix-blend-mode: difference;
 }
 
 .card__icon-button:focus {
