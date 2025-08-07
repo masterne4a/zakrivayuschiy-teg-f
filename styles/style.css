@@ -240,6 +240,7 @@
   border: var(--border);
   padding: 9px 17px;
   text-transform: uppercase;
+  background-color: var(--button-color);
 }
 
 @media (min-width: 1440px) {
