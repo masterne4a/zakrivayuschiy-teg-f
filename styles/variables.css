@@ -1,7 +1,7 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
   --main-font: 'Inter-Variable';
-  --accent-font: 'PressStart2P-Regular';
+  --accent-font: 'PressStart2P';
   --title-text-weight: 715;
   --color: #000;
   --card-text-weight: 410;
@@ -14,7 +14,7 @@
   --bacground-color: #fff;
   --font-size: 18px;
   --header-inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
-  --header-block-size: clamp(20.4375rem, 19.5352rem + 3.8498vw, 23rem);
+  --header-block-padding: clamp(7.625rem, 7.4489rem + 0.7512vw, 8.125rem);
   --text-stroke: 1px #fff;
   --button-background-color: #fff;
   --button-color: #fff;

@@ -20,7 +20,7 @@
   background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-variation-settings: "wght" 410;
+  font-variation-settings: 'wght' 410;
 }
 
 .header {
@@ -33,7 +33,7 @@
   border: var(--border);
   background-color: var(--bacground-color);
   inline-size: var(--header-inline-size);
-  block-size: var(--header-block-size);
+  padding: var(--header-block-padding) 0;
 }
 
 .header__logo-group {
@@ -45,14 +45,14 @@
 }
 
 .header__logo {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   font-weight: var(--ux-text-weight);
   font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
   text-transform: uppercase;
 }
 
 .header__title {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   font-weight: var(--ux-text-weight);
   font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
   text-transform: uppercase;
@@ -86,10 +86,9 @@
 .card__title {
   border-bottom: var(--border);
   padding: 5px 10px;
-  font-weight: var(--title-text-weight);
   font-size: var(--font-size);
   line-height: 120%;
-  font-variation-settings: normal;
+  font-variation-settings: 'wght' var(--title-text-weight);
 }
 
 .card__label {
@@ -97,12 +96,13 @@
   top: 25px;
   right: 25px;
   opacity: 0.5;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   font-weight: var(--ux-text-weight);
   font-size: 14px;
   text-transform: uppercase;
   text-shadow: 0 0 5px #fff;
   mix-blend-mode: hard-light;
+  z-index: 4;
 }
 
 @supports (text-stroke: 1px #fff) {
@@ -156,6 +156,7 @@
   padding: 0;
   outline: none;
   background-color: transparent;
+  transition: outline 0.3s ease;
 }
 
 .like-icon {
@@ -176,7 +177,7 @@
   display: block;
   margin: auto;
   color: var(--button-color);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   font-weight: var(--ux-text-weight);
   font-size: 0.875rem;
   line-height: 90%;
@@ -212,19 +213,17 @@
 }
 
 .save-as::backdrop {
-  background-color: rgb(0 0 0 / 0.3);
-  backdrop-filter: blur(7px);
+  background-color: rgb(0 0 0 / 0.75);
 }
 
 .save-as[open] {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  width: 341px;
-  height: 191px;
+  min-width: 341px;
   border: var(--border);
   padding: 30px 38px 30px 40px;
-  overflow: hidden;
+  text-transform: uppercase;
 }
 
 .save-as__icon {
@@ -240,6 +239,7 @@
 .save-as__button {
   border: var(--border);
   padding: 9px 17px;
+  text-transform: uppercase;
 }
 
 @media (min-width: 1440px) {
@@ -261,31 +261,31 @@
   }
 }
 
-.content-section .card:nth-of-type(2) .card__image {
+.filter-brightness {
   filter: brightness(80%);
 }
 
-.content-section .card:nth-of-type(3) .card__image {
+.filter-grayscale {
   filter: grayscale(0.9);
 }
 
-.content-section .card:nth-of-type(4) .card__image {
+.filter-hue-rotate {
   filter: hue-rotate(-150deg);
 }
 
-.content-section .card:nth-of-type(5) .card__image {
+.filter-invert {
   filter: invert(0.7);
 }
 
-.content-section .card:nth-of-type(6) .card__image {
+.filter-saturate {
   filter: saturate(158%);
 }
 
-.content-section .card:nth-of-type(7) .card__image {
+.filter-blur {
   filter: blur(0.5rem);
 }
 
-.content-section .card:nth-of-type(8) .card__image {
+.mix-filter {
   filter: hue-rotate(-150deg) opacity(0.8);
 }
 
@@ -300,7 +300,6 @@
 .button-decoration:focus-visible {
   box-shadow: 2px 2px 0 currentColor;
   outline: none;
-  transition: box-shadow 0.3s ease;
 }
 
 .button-decoration::before {
@@ -317,8 +316,6 @@
 }
 
 .button-decoration:hover::before {
-  content: "";
-  transition: transform 0.5s ease-in-out;
   transform: translateX(0);
 }
 
@@ -329,7 +326,6 @@
 .card__icon-button:focus-visible {
   outline: var(--border);
   outline-offset: -2px;
-  transition: outline 0.3s ease;
 }
 
 .card__like-button:focus {
